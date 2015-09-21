@@ -1,0 +1,41 @@
+#!/usr/bin/env python
+
+'''
+    The nesi script is the main command line program.
+'''
+
+from __future__ import print_function
+
+import argparse
+
+
+def main():
+    '''
+        The main entry point for the executable. This method is responsible for
+        the parsing of command line arguments and the dumping of the .nes rom
+        info.
+    '''
+
+    parser = argparse.ArgumentParser(
+        description='Specify a .nes rom image to be analyzed'
+    )
+
+    parser.add_argument(
+        '-r',
+        '--rom',
+        help='path to a .nes rom image to be analyzed',
+        type=str
+    )
+
+    args = parser.parse_args()
+
+    if args.rom:
+        print('Was given {rom}'.format(rom=args.rom))
+    else:
+        parser.print_help()
+
+
+if __name__ == '__main__':
+    main()
+
+# vim: ai tabstop=4 expandtab shiftwidth=4 softtabstop=4 ft=python
