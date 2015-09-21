@@ -1,0 +1,17 @@
+# Ignore any Vim artifacts
+*~
+*.swp
+
+# Ignore any t.rb artifacts
+.tasks.*
+
+# Ignore any pyenv artifacts
+*.python-version
+
+# Ignore any Python artifacts
+*.pyc
+
+# Ignore PyPi generated files
+*.egg-info/
+MANIFEST
+dist/
