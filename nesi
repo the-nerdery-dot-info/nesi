@@ -1,7 +1,15 @@
 #!/usr/bin/env python
 
 '''
-    The nesi script is the main command line program.
+    The nesi executable can analyze a .nes rom image for information. In
+    particular, nesi will extract the following:
+
+        1. ROM Header (16 bytes)
+        2. Mapper information
+        3. PRG, CHR size info
+        4. Example ROMs similar to this one (useful for emulator testing)
+        5. Battery, Mirroring, VRAM, and Trainer information
+        6. If bytes 7-15 appear valid or not
 '''
 
 from __future__ import print_function
@@ -11,9 +19,8 @@ import argparse
 
 def main():
     '''
-        The main entry point for the executable. This method is responsible for
-        the parsing of command line arguments and the dumping of the .nes rom
-        info.
+        The main entry point for nesi. The entry point should parse command
+        line arguments and delegate all work to the nesi module.
     '''
 
     parser = argparse.ArgumentParser(
