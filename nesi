@@ -12,9 +12,11 @@
         6. If bytes 7-15 appear valid or not
 '''
 
-from __future__ import print_function
-
+# Import all standard library modules
 import argparse
+
+# Import all nesi modules
+from nes.rom import NesRom
 
 
 def main():
@@ -37,7 +39,7 @@ def main():
     args = parser.parse_args()
 
     if args.rom:
-        print('Was given {rom}'.format(rom=args.rom))
+        NesRom(args.rom).analyze().print_analysis()
     else:
         parser.print_help()
 
