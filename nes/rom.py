@@ -5,6 +5,8 @@
 # Import standard library modules
 from __future__ import print_function
 
+import os
+
 # Import nesi modules
 import nes.settings
 
@@ -29,24 +31,40 @@ class NesRom(object):
         TODO
     '''
 
-    def __init__(self, rom):
-        self.rom = rom
+    def __init__(self, rom_path):
+        self.rom_name = os.path.basename(rom_path)
+
+        with open(rom_path, 'rb') as fopen:
+            self.rom_data = bytearray(fopen.read())
+
+        self.rom_size = len(self.rom_data)
 
     def analyze(self):
         '''
-            TODO
+            Parses the rom image and stores all information
         '''
 
         # Analyze stuff
 
         return self
 
+    def print_file_info(self):
+        '''
+            Prints the rom's name and file size
+        '''
+
+        print('{rom_name} ({rom_size} bytes, {kbytes} kilobytes)'.format(
+            rom_name=self.rom_name,
+            rom_size=self.rom_size,
+            kbytes=self.rom_size / 1024
+        ))
+
     def print_analysis(self):
         '''
-            TODO
+            Prints all image information
         '''
 
         print(nesi_information())
         print()
 
-        print('Was given {rom}'.format(rom=self.rom))
+        self.print_file_info()
