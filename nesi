@@ -20,7 +20,7 @@ import argparse
 def main():
     '''
         The main entry point for nesi. The entry point should parse command
-        line arguments and delegate all work to the nesi module.
+        line arguments and delegate all work to the nes module.
     '''
 
     parser = argparse.ArgumentParser(
