@@ -1,7 +1,7 @@
 nesi
 ====
 
-A rom hacking tool for the analysis of .nes rom images.
+A rom hacking tool for the analysis of *.nes* rom images.
 
 Requirements
 ------------
