@@ -42,6 +42,8 @@ class NesRom(object):
         # Analysis Fields
         self.valid = False
         self.header = []
+        self.prg_count = 0
+        self.chr_count = 0
 
     def analyze(self):
         '''
@@ -50,6 +52,8 @@ class NesRom(object):
 
         self.valid = self.rom_data[0:4] == 'NES\x1a'
         self.header = ' '.join([hex(n) for n in self.rom_data[0:15]])
+        self.prg_count = self.rom_data[4]
+        self.chr_count = self.rom_data[5]
 
         return self
 
@@ -69,8 +73,10 @@ class NesRom(object):
             Prints the rom's header information
         '''
 
-        print('Is an NES rom? {valid}'.format(valid=self.valid))
+        print('NES\\0x1a present? {valid}'.format(valid=self.valid))
         print('Header: {header}'.format(header=self.header))
+        print('PRG Count: {prg_count}'.format(prg_count=self.prg_count))
+        print('CHR Count: {chr_count}'.format(chr_count=self.chr_count))
 
     def print_analysis(self):
         '''
