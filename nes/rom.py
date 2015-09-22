@@ -49,7 +49,7 @@ class NesRom(object):
         '''
 
         self.valid = self.rom_data[0:4] == 'NES\x1a'
-        self.header = self.rom_data[0:16]
+        self.header = ' '.join([hex(n) for n in self.rom_data[0:15]])
 
         return self
 
@@ -70,6 +70,7 @@ class NesRom(object):
         '''
 
         print('Is an NES rom? {valid}'.format(valid=self.valid))
+        print('Header: {header}'.format(header=self.header))
 
     def print_analysis(self):
         '''
