@@ -45,6 +45,7 @@ class NesRom(object):
         self.prg_count = 0
         self.chr_count = 0
         self.mapper = None
+        self.trainer = False
 
     def analyze(self):
         '''
@@ -56,6 +57,7 @@ class NesRom(object):
         self.prg_count = self.rom_data[4]
         self.chr_count = self.rom_data[5]
         self.mapper = (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
+        self.trainer = (self.rom_data[6] & 0x4) == 1
 
         return self
 
@@ -80,6 +82,7 @@ class NesRom(object):
         print('PRG Count: {prg_count}'.format(prg_count=self.prg_count))
         print('CHR Count: {chr_count}'.format(chr_count=self.chr_count))
         print('Mapper: {mapper}'.format(mapper=self.mapper))
+        print('Trainer: {trainer}'.format(trainer=self.trainer))
 
     def print_analysis(self):
         '''
