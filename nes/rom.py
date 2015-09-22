@@ -39,12 +39,17 @@ class NesRom(object):
 
         self.rom_size = len(self.rom_data)
 
+        # Analysis Fields
+        self.valid = False
+        self.header = []
+
     def analyze(self):
         '''
             Parses the rom image and stores all information
         '''
 
-        # Analyze stuff
+        self.valid = self.rom_data[0:4] == 'NES\x1a'
+        self.header = self.rom_data[0:16]
 
         return self
 
@@ -59,6 +64,13 @@ class NesRom(object):
             kbytes=self.rom_size / 1024
         ))
 
+    def print_header_info(self):
+        '''
+            Prints the rom's header information
+        '''
+
+        print('Is an NES rom? {valid}'.format(valid=self.valid))
+
     def print_analysis(self):
         '''
             Prints all image information
@@ -68,3 +80,6 @@ class NesRom(object):
         print()
 
         self.print_file_info()
+        print()
+
+        self.print_header_info()
