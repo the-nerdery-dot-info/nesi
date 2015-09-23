@@ -46,6 +46,7 @@ class NesRom(object):
         self.chr_count = 0
         self.mapper = None
         self.trainer = False
+        self.fourscreen = False
 
     def analyze(self):
         '''
@@ -58,6 +59,7 @@ class NesRom(object):
         self.chr_count = self.rom_data[5]
         self.mapper = (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
         self.trainer = (self.rom_data[6] & 0x4) == 1
+        self.fourscreen = (self.rom_data[6] & 0x8) == 1
 
         return self
 
@@ -83,6 +85,7 @@ class NesRom(object):
         print('CHR Count: {chr_count}'.format(chr_count=self.chr_count))
         print('Mapper: {mapper}'.format(mapper=self.mapper))
         print('Trainer: {trainer}'.format(trainer=self.trainer))
+        print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen))
 
     def print_analysis(self):
         '''
