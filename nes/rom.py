@@ -60,9 +60,9 @@ class NesRom(object):
         self.prg_count = self.rom_data[4]
         self.chr_count = self.rom_data[5]
         self.mapper = (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
-        self.trainer = (self.rom_data[6] & 0x4) == 1
-        self.fourscreen = (self.rom_data[6] & 0x8) == 1
-        self.battery = (self.rom_data[6] & 0x4) == 1
+        self.trainer = ((self.rom_data[6] >> 2) & 0x1) == 1
+        self.fourscreen = ((self.rom_data[6] >> 3) & 0x1) == 1
+        self.battery = ((self.rom_data[6] >> 1) & 0x1) == 1
 
         if (self.rom_data[6] & 0x1) == 1:
             self.mirroring = 'vertical'
