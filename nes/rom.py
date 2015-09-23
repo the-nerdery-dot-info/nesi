@@ -48,6 +48,7 @@ class NesRom(object):
         self.trainer = False
         self.fourscreen = False
         self.battery = False
+        self.mirroring = None
 
     def analyze(self):
         '''
@@ -62,6 +63,11 @@ class NesRom(object):
         self.trainer = (self.rom_data[6] & 0x4) == 1
         self.fourscreen = (self.rom_data[6] & 0x8) == 1
         self.battery = (self.rom_data[6] & 0x4) == 1
+
+        if (self.rom_data[6] & 0x1) == 1:
+            self.mirroring = 'vertical'
+        else:
+            self.mirroring = 'horizontal'
 
         return self
 
@@ -89,6 +95,7 @@ class NesRom(object):
         print('Trainer: {trainer}'.format(trainer=self.trainer))
         print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen))
         print('Battery: {battery}'.format(battery=self.battery))
+        print('Mirroring: {mirroring}'.format(mirroring=self.mirroring))
 
     def print_analysis(self):
         '''
