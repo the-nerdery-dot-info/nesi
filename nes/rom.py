@@ -47,6 +47,7 @@ class NesRom(object):
         self.mapper = None
         self.trainer = False
         self.fourscreen = False
+        self.battery = False
 
     def analyze(self):
         '''
@@ -60,6 +61,7 @@ class NesRom(object):
         self.mapper = (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
         self.trainer = (self.rom_data[6] & 0x4) == 1
         self.fourscreen = (self.rom_data[6] & 0x8) == 1
+        self.battery = (self.rom_data[6] & 0x4) == 1
 
         return self
 
@@ -86,6 +88,7 @@ class NesRom(object):
         print('Mapper: {mapper}'.format(mapper=self.mapper))
         print('Trainer: {trainer}'.format(trainer=self.trainer))
         print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen))
+        print('Battery: {battery}'.format(battery=self.battery))
 
     def print_analysis(self):
         '''
