@@ -93,7 +93,7 @@ class NesRom(object):
             '''
             return hex(string).replace('0x', '').upper()
 
-        return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:15]])
+        return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:16]])
 
     def contains_magic_number(self):
         '''
