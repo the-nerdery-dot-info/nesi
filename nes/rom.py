@@ -135,6 +135,7 @@ class NesRom(object):
             validity = fmt_str('Valid?', 'YES')
         else:
             # Bail out, don't parse the file if it's not valid
+            print(validity)
             return
 
         print(validity)
