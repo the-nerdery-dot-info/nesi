@@ -88,7 +88,7 @@ class NesRom(object):
             '''
                 TODO
             '''
-            return hex(string).replace('0x', '')
+            return hex(string).replace('0x', '').upper()
 
         return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:15]])
 
