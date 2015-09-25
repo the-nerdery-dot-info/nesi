@@ -30,7 +30,7 @@ def fmt_str(tag, string):
     '''
         TODO
     '''
-    return tag.ljust(15) + string
+    return tag.ljust(15) + '| ' + string
 
 
 class NesRom(object):
