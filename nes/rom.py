@@ -62,7 +62,10 @@ class NesRom(object):
         '''
             TODO
         '''
-        return ((self.rom_data[6] >> 2) & 0x1) == 1
+        if ((self.rom_data[6] >> 2) & 0x1) == 1:
+            return 'Yes'
+        else:
+            return 'None'
 
     def mapper(self):
         '''
@@ -145,6 +148,6 @@ class NesRom(object):
         print(fmt_str('CHR', str(self.chr_count())))
         print(fmt_str('Mapper', str(self.mapper())))
         print(fmt_str('Mirroring', str(self.mirroring())))
+        print(fmt_str('Trainer', self.trainer()))
         print(fmt_str('FourScreen?', str(self.fourscreen())))
         print(fmt_str('Battery?', str(self.battery())))
-        print(fmt_str('Trainer?', str(self.trainer())))
