@@ -40,7 +40,6 @@ class NesRom(object):
         self.rom_size = len(self.rom_data)
 
         # Analysis Fields
-        self.header = []
         self.mapper = None
         self.trainer = False
         self.fourscreen = False
@@ -52,7 +51,6 @@ class NesRom(object):
             Parses the rom image and stores all information
         '''
 
-        self.header = ' '.join([hex(n) for n in self.rom_data[0:15]])
         self.mapper = (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
         self.trainer = ((self.rom_data[6] >> 2) & 0x1) == 1
         self.fourscreen = ((self.rom_data[6] >> 3) & 0x1) == 1
@@ -64,6 +62,12 @@ class NesRom(object):
             self.mirroring = 'horizontal'
 
         return self
+
+    def header(self):
+        '''
+            TODO
+        '''
+        return ' '.join([hex(n) for n in self.rom_data[0:15]])
 
     def contains_magic_number(self):
         '''
@@ -104,7 +108,7 @@ class NesRom(object):
         else:
             print('NES\\0x1a not present!')
 
-        print('Header: {header}'.format(header=self.header))
+        print('Header: {header}'.format(header=self.header()))
         print('PRG Count: {prg_count}'.format(prg_count=self.prg_count()))
         print('CHR Count: {chr_count}'.format(chr_count=self.chr_count()))
         print('Mapper: {mapper}'.format(mapper=self.mapper))
