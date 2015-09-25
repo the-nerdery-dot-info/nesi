@@ -90,21 +90,20 @@ class NesRom(object):
         '''
         return self.rom_data[5]
 
-    def print_file_info(self):
+    def print_analysis(self):
         '''
-            Prints the rom's name and file size
+            Prints all image information
         '''
+
+        print(nesi_information())
+        print()
 
         print('{rom_name} ({rom_size} bytes, {kbytes} kilobytes)'.format(
             rom_name=self.rom_name,
             rom_size=self.rom_size,
             kbytes=self.rom_size / 1024
         ))
-
-    def print_header_info(self):
-        '''
-            Prints the rom's header information
-        '''
+        print()
 
         if self.contains_magic_number():
             print('NES\\0x1a present')
@@ -119,16 +118,3 @@ class NesRom(object):
         print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen))
         print('Battery: {battery}'.format(battery=self.battery))
         print('Mirroring: {mirroring}'.format(mirroring=self.mirroring()))
-
-    def print_analysis(self):
-        '''
-            Prints all image information
-        '''
-
-        print(nesi_information())
-        print()
-
-        self.print_file_info()
-        print()
-
-        self.print_header_info()
