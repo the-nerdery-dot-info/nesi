@@ -132,16 +132,16 @@ class NesRom(object):
 
         print(rom)
 
-        validity = fmt_str('Valid?', 'NO')
+        status = fmt_str('Status', 'Does not appear to be a valid .nes rom')
 
         if self.contains_magic_number():
-            validity = fmt_str('Valid?', 'YES')
+            status = fmt_str('Status', 'Appears to be a valid .nes rom')
         else:
             # Bail out, don't parse the file if it's not valid
-            print(validity)
+            print(status)
             return
 
-        print(validity)
+        print(status)
 
         print(fmt_str('Header', self.header()))
         print(fmt_str('PRG', str(self.prg_count())))
