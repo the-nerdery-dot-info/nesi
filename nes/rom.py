@@ -30,7 +30,7 @@ def fmt_str(tag, string):
     '''
         TODO
     '''
-    return tag.ljust(15) + '| ' + string
+    return tag.ljust(12) + '| ' + string
 
 
 class NesRom(object):
@@ -75,9 +75,9 @@ class NesRom(object):
             TODO
         '''
         if (self.rom_data[6] & 0x1) == 1:
-            return 'vertical'
+            return 'Vertical'
         else:
-            return 'horizontal'
+            return 'Horizontal'
 
     def header(self):
         '''
@@ -144,7 +144,7 @@ class NesRom(object):
         print(fmt_str('PRG', str(self.prg_count())))
         print(fmt_str('CHR', str(self.chr_count())))
         print(fmt_str('Mapper', str(self.mapper())))
+        print(fmt_str('Mirroring', str(self.mirroring())))
         print(fmt_str('FourScreen?', str(self.fourscreen())))
         print(fmt_str('Battery?', str(self.battery())))
-        print(fmt_str('Mirroring?', str(self.mirroring())))
         print(fmt_str('Trainer?', str(self.trainer())))
