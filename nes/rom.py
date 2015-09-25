@@ -83,7 +83,14 @@ class NesRom(object):
         '''
             TODO
         '''
-        return ' '.join([hex(n) for n in self.rom_data[0:15]])
+
+        def fmt_hex_str(string):
+            '''
+                TODO
+            '''
+            return hex(string).replace('0x', '')
+
+        return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:15]])
 
     def contains_magic_number(self):
         '''
