@@ -97,9 +97,9 @@ class NesRom(object):
 
     def dirty_header(self):
         '''
-            TODO
+            Determine if bytes 7-15 are all equal to zero
         '''
-        return False
+        return all(byte == 0 for byte in self.rom_data[6:17])
 
     def contains_magic_number(self):
         '''
@@ -129,7 +129,7 @@ class NesRom(object):
 
         rom = fmt_str(
             'ROM',
-            '{rom_name} ({rom_size} bytes, {kbytes} kilobytes)'.format(
+            '{rom_name} ({rom_size} bytes, {kbytes}kb)'.format(
                 rom_name=self.rom_name,
                 rom_size=self.rom_size,
                 kbytes=self.rom_size / 1024
