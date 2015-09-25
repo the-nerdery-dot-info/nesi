@@ -111,13 +111,17 @@ class NesRom(object):
         '''
             TODO
         '''
-        return self.rom_data[4]
+        return '{total}kb ({count} x 16kb pages)'.format(
+            count=self.rom_data[4], total=self.rom_data[4] * 16
+        )
 
     def chr_count(self):
         '''
             TODO
         '''
-        return self.rom_data[5]
+        return '{total}kb ({count} x 8kb pages)'.format(
+            count=self.rom_data[5], total=self.rom_data[5] * 8
+        )
 
     def print_analysis(self):
         '''
@@ -157,8 +161,8 @@ class NesRom(object):
             notes = fmt_str('Note(s)', 'Bytes 7-15 appear to not be clean!')
 
         print(notes)
-        print(fmt_str('PRG', str(self.prg_count())))
-        print(fmt_str('CHR', str(self.chr_count())))
+        print(fmt_str('PRG', self.prg_count()))
+        print(fmt_str('CHR', self.chr_count()))
         print(fmt_str('Mapper', str(self.mapper())))
         print(fmt_str('Mirroring', str(self.mirroring())))
         print(fmt_str('Trainer', self.trainer()))
