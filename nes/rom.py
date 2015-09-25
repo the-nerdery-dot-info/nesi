@@ -26,11 +26,11 @@ def nesi_information():
     )
 
 
-def fmt_str(tag, string):
+def fmt_str(tag, string, seperator=' | '):
     '''
         TODO
     '''
-    return tag.ljust(12) + '| ' + string
+    return tag.ljust(12) + seperator + string
 
 
 class NesRom(object):
@@ -95,6 +95,12 @@ class NesRom(object):
 
         return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:16]])
 
+    def dirty_header(self):
+        '''
+            TODO
+        '''
+        return False
+
     def contains_magic_number(self):
         '''
             TODO
@@ -144,6 +150,13 @@ class NesRom(object):
         print(status)
 
         print(fmt_str('Header', self.header()))
+
+        notes = fmt_str('Note(s)', 'Bytes 7-15 appear clean')
+
+        if self.dirty_header():
+            notes = fmt_str('Note(s)', 'Bytes 7-15 appear to not be clean!')
+
+        print(notes)
         print(fmt_str('PRG', str(self.prg_count())))
         print(fmt_str('CHR', str(self.chr_count())))
         print(fmt_str('Mapper', str(self.mapper())))
