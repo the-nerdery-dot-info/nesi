@@ -50,13 +50,19 @@ class NesRom(object):
         '''
             TODO
         '''
-        return ((self.rom_data[6] >> 1) & 0x1) == 1
+        if ((self.rom_data[6] >> 1) & 0x1) == 1:
+            return 'Yes'
+        else:
+            return 'No'
 
     def fourscreen(self):
         '''
             TODO
         '''
-        return ((self.rom_data[6] >> 3) & 0x1) == 1
+        if ((self.rom_data[6] >> 3) & 0x1) == 1:
+            return 'Yes'
+        else:
+            return 'No'
 
     def trainer(self):
         '''
@@ -164,7 +170,7 @@ class NesRom(object):
         print(fmt_str('PRG', self.prg_count()))
         print(fmt_str('CHR', self.chr_count()))
         print(fmt_str('Mapper', str(self.mapper())))
-        print(fmt_str('Mirroring', str(self.mirroring())))
+        print(fmt_str('Mirroring', self.mirroring()))
         print(fmt_str('Trainer', self.trainer()))
-        print(fmt_str('FourScreen?', str(self.fourscreen())))
-        print(fmt_str('Battery?', str(self.battery())))
+        print(fmt_str('FourScreen', self.fourscreen()))
+        print(fmt_str('Battery', self.battery()))
