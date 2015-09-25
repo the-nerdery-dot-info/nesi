@@ -39,7 +39,7 @@ def main():
     args = parser.parse_args()
 
     if args.rom:
-        NesRom(args.rom).analyze().print_analysis()
+        NesRom(args.rom).print_analysis()
     else:
         parser.print_help()
 

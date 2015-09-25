@@ -39,23 +39,17 @@ class NesRom(object):
 
         self.rom_size = len(self.rom_data)
 
-        # Analysis Fields
-        self.battery = False
+    def battery(self):
+        '''
+            TODO
+        '''
+        return ((self.rom_data[6] >> 1) & 0x1) == 1
 
     def fourscreen(self):
         '''
             TODO
         '''
         return ((self.rom_data[6] >> 3) & 0x1) == 1
-
-    def analyze(self):
-        '''
-            Parses the rom image and stores all information
-        '''
-
-        self.battery = ((self.rom_data[6] >> 1) & 0x1) == 1
-
-        return self
 
     def trainer(self):
         '''
@@ -127,7 +121,7 @@ class NesRom(object):
         print('CHR Count: {chr_count}'.format(chr_count=self.chr_count()))
         print('Mapper: {mapper}'.format(mapper=self.mapper()))
         print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen()))
-        print('Battery: {battery}'.format(battery=self.battery))
+        print('Battery: {battery}'.format(battery=self.battery()))
         print('Mirroring: {mirroring}'.format(mirroring=self.mirroring()))
 
         if self.trainer():
