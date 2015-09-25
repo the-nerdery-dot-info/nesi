@@ -26,6 +26,13 @@ def nesi_information():
     )
 
 
+def fmt_str(tag, string):
+    '''
+        TODO
+    '''
+    return tag.ljust(15) + string
+
+
 class NesRom(object):
     '''
         TODO
@@ -104,27 +111,32 @@ class NesRom(object):
         print(nesi_information())
         print()
 
-        print('{rom_name} ({rom_size} bytes, {kbytes} kilobytes)'.format(
-            rom_name=self.rom_name,
-            rom_size=self.rom_size,
-            kbytes=self.rom_size / 1024
-        ))
-        print()
+        rom = fmt_str(
+            'ROM',
+            '{rom_name} ({rom_size} bytes, {kbytes} kilobytes)'.format(
+                rom_name=self.rom_name,
+                rom_size=self.rom_size,
+                kbytes=self.rom_size / 1024
+            )
+        )
+
+        print(rom)
+
+        validity = fmt_str('Valid?', 'NO')
 
         if self.contains_magic_number():
-            print('NES\\0x1a present')
+            validity = fmt_str('Valid?', 'YES')
         else:
-            print('NES\\0x1a not present!')
+            # Bail out, don't parse the file if it's not valid
+            return
 
-        print('Header: {header}'.format(header=self.header()))
-        print('PRG Count: {prg_count}'.format(prg_count=self.prg_count()))
-        print('CHR Count: {chr_count}'.format(chr_count=self.chr_count()))
-        print('Mapper: {mapper}'.format(mapper=self.mapper()))
-        print('4 Screen: {fourscreen}'.format(fourscreen=self.fourscreen()))
-        print('Battery: {battery}'.format(battery=self.battery()))
-        print('Mirroring: {mirroring}'.format(mirroring=self.mirroring()))
+        print(validity)
 
-        if self.trainer():
-            print('Trainer: YES')
-        else:
-            print('Trainer: NO')
+        print(fmt_str('Header', self.header()))
+        print(fmt_str('PRG', str(self.prg_count())))
+        print(fmt_str('CHR', str(self.chr_count())))
+        print(fmt_str('Mapper', str(self.mapper())))
+        print(fmt_str('FourScreen?', str(self.fourscreen())))
+        print(fmt_str('Battery?', str(self.battery())))
+        print(fmt_str('Mirroring?', str(self.mirroring())))
+        print(fmt_str('Trainer?', str(self.trainer())))
