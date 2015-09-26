@@ -13,10 +13,12 @@
 '''
 
 # Import all standard library modules
+from __future__ import print_function
+
 import argparse
 
 # Import all nesi modules
-from nes.rom import NesRom
+from nes import rom
 
 
 def main():
@@ -36,10 +38,19 @@ def main():
         type=str
     )
 
+    parser.add_argument(
+        '-v',
+        '--version',
+        help='show the current nesi version',
+        action='store_true'
+    )
+
     args = parser.parse_args()
 
     if args.rom:
-        NesRom(args.rom).print_analysis()
+        rom.NesRom(args.rom).print_analysis()
+    elif args.version:
+        print(rom.nesi_information())
     else:
         parser.print_help()
 

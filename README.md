@@ -20,13 +20,14 @@ Usage
 
 Nesi is a command line application. The basic usage can be found below:
 
-    usage: nesi [-h] [-r ROM]
+    usage: nesi [-h] [-r ROM] [-v]
 
     Specify a .nes rom image to be analyzed
 
     optional arguments:
       -h, --help         show this help message and exit
       -r ROM, --rom ROM  path to a .nes rom image to be analyzed
+      -v, --version      show the current nesi version
 
 License
 -------
