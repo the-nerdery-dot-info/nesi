@@ -49,7 +49,8 @@ class NesRom(object):
 
     def battery(self):
         '''
-            TODO
+            Returns 'Yes' if the rom contains battery backed RAM, and returns
+            'No' if it does not.
         '''
         if ((self.rom_data[6] >> 1) & 0x1) == 1:
             return 'Yes'
@@ -58,7 +59,8 @@ class NesRom(object):
 
     def fourscreen(self):
         '''
-            TODO
+            Returns 'Yes' if the rom contains fourscreen vram, returns 'No'
+            if it does not.
         '''
         if ((self.rom_data[6] >> 3) & 0x1) == 1:
             return 'Yes'
@@ -67,7 +69,8 @@ class NesRom(object):
 
     def trainer(self):
         '''
-            TODO
+            Returns 'Yes' if the rom contains a trainer, returns 'No'
+            otherwise.
         '''
         if ((self.rom_data[6] >> 2) & 0x1) == 1:
             return 'Yes'
@@ -76,13 +79,14 @@ class NesRom(object):
 
     def mapper_id(self):
         '''
-            TODO
+            Returns the rom's mapper ID as an integer.
         '''
         return (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
 
     def mapper(self):
         '''
-            TODO
+            Returns a string describing the rom's mapper. The string contains
+            the mapper's ID and human friendly name.
         '''
         mapper = nes.mappers.find(self.mapper_id())
 
@@ -90,7 +94,9 @@ class NesRom(object):
 
     def examples(self):
         '''
-            TODO
+            Returns one or more comma separated game names that use the same
+            mapper as this rom. Returns 'None' if there are no known examples
+            or we haven't simply added any yet.
         '''
         mapper = nes.mappers.find(self.mapper_id())
 
@@ -98,7 +104,8 @@ class NesRom(object):
 
     def mirroring(self):
         '''
-            TODO
+            Returns the type of mirroring the rom uses. The return can either
+            be 'Vertical' or 'Horizontal'.
         '''
         if (self.rom_data[6] & 0x1) == 1:
             return 'Vertical'
@@ -107,7 +114,7 @@ class NesRom(object):
 
     def header(self):
         '''
-            TODO
+            Returns a string describing the 16 bytes of the header.
         '''
 
         def fmt_hex_str(string):
@@ -126,7 +133,8 @@ class NesRom(object):
 
     def contains_magic_number(self):
         '''
-            TODO
+            Returns 'True' if the rom contains the magic .nes number,
+            which is 'NES\x1a'. Returns 'False' otherwise.
         '''
         return self.rom_data[0:4] == 'NES\x1a'
 
