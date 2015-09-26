@@ -16,7 +16,29 @@ Requirements
 Installation
 ------------
 
-Work in progress...
+The easiest way to install *nesi* is via PyPi, this can be done with the
+following command:
+
+```bash
+$ pip install nesi
+```
+
+Note, sudo may or may not be required depending on your environment.
+
+The second way to install is by cloning the repository and installing the
+development version of the pip package:
+
+```bash
+$ git clone https://github.com/prophittcorey/nesi.git
+$ cd nesi
+$ make install
+```
+
+The pip package installs the nesi executable as well as the nes package which
+can be used to write your own scripts.
+
+Note, you may have to source your shell for the *nesi* executable to be picked
+up.
 
 Usage
 -----
