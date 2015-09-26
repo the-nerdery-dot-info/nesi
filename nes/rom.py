@@ -8,6 +8,7 @@ from __future__ import print_function
 import os
 
 # Import nesi modules
+import nes.mappers
 import nes.settings
 
 
@@ -73,11 +74,27 @@ class NesRom(object):
         else:
             return 'None'
 
-    def mapper(self):
+    def mapper_id(self):
         '''
             TODO
         '''
         return (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
+
+    def mapper(self):
+        '''
+            TODO
+        '''
+        mapper = nes.mappers.find(self.mapper_id())
+
+        return '{id} ({name})'.format(id=self.mapper_id(), name=mapper['name'])
+
+    def examples(self):
+        '''
+            TODO
+        '''
+        mapper = nes.mappers.find(self.mapper_id())
+
+        return mapper['examples']
 
     def mirroring(self):
         '''
@@ -170,6 +187,7 @@ class NesRom(object):
         print(fmt_str('PRG', self.prg_count()))
         print(fmt_str('CHR', self.chr_count()))
         print(fmt_str('Mapper', str(self.mapper())))
+        print(fmt_str('Example(s)', str(self.examples())))
         print(fmt_str('Mirroring', self.mirroring()))
         print(fmt_str('Trainer', self.trainer()))
         print(fmt_str('FourScreen', self.fourscreen()))
