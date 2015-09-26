@@ -1,5 +1,7 @@
 '''
-    TODO
+    The rom package contains the main code for nesi. This package contains the
+    NesRom class and all operations on the rom data as well as all printing of
+    results.
 '''
 
 # Import standard library modules
@@ -29,14 +31,17 @@ def nesi_information():
 
 def fmt_str(tag, string, seperator=' | '):
     '''
-        TODO
+        A minor helper function. Takes in a tag and string and outputs a
+        formatted string with the tag left justified and the string right
+        justified.
     '''
     return tag.ljust(12) + seperator + string
 
 
 class NesRom(object):
     '''
-        TODO
+        The main work horse of nesi. The NesRom contains all rom data and
+        can before analysis of the rom data.
     '''
 
     def __init__(self, rom_path):
@@ -119,7 +124,8 @@ class NesRom(object):
 
         def fmt_hex_str(string):
             '''
-                TODO
+                A helper function to string the '0x' portion of each hex
+                number off and capitalize all hex numbers.
             '''
             return hex(string).replace('0x', '').upper()
 
@@ -140,7 +146,9 @@ class NesRom(object):
 
     def prg_count(self):
         '''
-            TODO
+            Returns the amount of program data pages found in the rom. To
+            get the number of bytes you can multiply the prg count by
+            16kb (the size of each page).
         '''
         return '{total}kb ({count} x 16kb pages)'.format(
             count=self.rom_data[4], total=self.rom_data[4] * 16
@@ -148,7 +156,9 @@ class NesRom(object):
 
     def chr_count(self):
         '''
-            TODO
+            Returns the amount of character data pages found in the rom. To
+            get the number of bytes you can multiply the chr count by
+            8kb (the size of each page).
         '''
         return '{total}kb ({count} x 8kb pages)'.format(
             count=self.rom_data[5], total=self.rom_data[5] * 8
@@ -156,7 +166,7 @@ class NesRom(object):
 
     def print_analysis(self):
         '''
-            Prints all image information
+            Prints our complete summary of the rom to stdout.
         '''
 
         print(nesi_information())
