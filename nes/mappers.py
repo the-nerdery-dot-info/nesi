@@ -19,5 +19,5 @@ def find(mapper_id):
     except KeyError:
         return {
             'name': 'Unknown',
-            'examples': None
+            'examples': 'None'
         }
