@@ -2,6 +2,7 @@ nesi
 ====
 
 [![BuildStatus](https://travis-ci.org/prophittcorey/nesi.svg?branch=master)](https://travis-ci.org/prophittcorey/nesi)
+[![PyPI version](https://badge.fury.io/py/nesi.svg)](http://badge.fury.io/py/nesi)
 
 A rom hacking tool for the analysis of *.nes* rom images.
 
