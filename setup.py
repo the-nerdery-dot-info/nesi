@@ -1,5 +1,12 @@
 '''
     Setup package information for PyPi distribution.
+
+    Note:
+        Before deploying, you need to build a git tagged version so
+        PyPi can get the distribution.
+
+        git tag -a major.minor -m 'Some Release Note(s)'
+        git push --tags
 '''
 
 # All standard library imports
