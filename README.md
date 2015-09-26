@@ -1,6 +1,8 @@
 nesi
 ====
 
+[![BuildStatus](https://travis-ci.org/prophittcorey/nesi.svg?branch=master)](https://travis-ci.org/prophittcorey/nesi)
+
 A rom hacking tool for the analysis of *.nes* rom images.
 
 ![alt text](screenshots/nesi-screenshot.png "A screenshot of nesi's output")
