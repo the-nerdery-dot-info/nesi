@@ -35,6 +35,7 @@ def fmt_str(tag, string, seperator=' | '):
         formatted string with the tag left justified and the string right
         justified.
     '''
+
     return tag.ljust(12) + seperator + string
 
 
@@ -57,6 +58,7 @@ class NesRom(object):
             Returns 'Yes' if the rom contains battery backed RAM, and returns
             'No' if it does not.
         '''
+
         if ((self.rom_data[6] >> 1) & 0x1) == 1:
             return 'Yes'
         else:
@@ -67,6 +69,7 @@ class NesRom(object):
             Returns 'Yes' if the rom contains fourscreen vram, returns 'No'
             if it does not.
         '''
+
         if ((self.rom_data[6] >> 3) & 0x1) == 1:
             return 'Yes'
         else:
@@ -77,6 +80,7 @@ class NesRom(object):
             Returns 'Yes' if the rom contains a trainer, returns 'No'
             otherwise.
         '''
+
         if ((self.rom_data[6] >> 2) & 0x1) == 1:
             return 'Yes'
         else:
@@ -86,6 +90,7 @@ class NesRom(object):
         '''
             Returns the rom's mapper ID as an integer.
         '''
+
         return (self.rom_data[6] >> 4) | ((self.rom_data[7] >> 4) << 4)
 
     def mapper(self):
@@ -93,6 +98,7 @@ class NesRom(object):
             Returns a string describing the rom's mapper. The string contains
             the mapper's ID and human friendly name.
         '''
+
         mapper = nes.mappers.find(self.mapper_id())
 
         return '{id} ({name})'.format(id=self.mapper_id(), name=mapper['name'])
@@ -103,6 +109,7 @@ class NesRom(object):
             mapper as this rom. Returns 'None' if there are no known examples
             or we haven't simply added any yet.
         '''
+
         mapper = nes.mappers.find(self.mapper_id())
 
         return mapper['examples']
@@ -112,6 +119,7 @@ class NesRom(object):
             Returns the type of mirroring the rom uses. The return can either
             be 'Vertical' or 'Horizontal'.
         '''
+
         if (self.rom_data[6] & 0x1) == 1:
             return 'Vertical'
         else:
@@ -127,6 +135,7 @@ class NesRom(object):
                 A helper function to string the '0x' portion of each hex
                 number off and capitalize all hex numbers.
             '''
+
             return hex(string).replace('0x', '').upper()
 
         return ' '.join([fmt_hex_str(n) for n in self.rom_data[0:16]])
@@ -135,6 +144,7 @@ class NesRom(object):
         '''
             Determine if bytes 7-15 are all equal to zero
         '''
+
         return all(byte == 0 for byte in self.rom_data[6:17])
 
     def contains_magic_number(self):
@@ -142,6 +152,7 @@ class NesRom(object):
             Returns 'True' if the rom contains the magic .nes number,
             which is 'NES\x1a'. Returns 'False' otherwise.
         '''
+
         return self.rom_data[0:4] == 'NES\x1a'
 
     def prg_count(self):
@@ -150,6 +161,7 @@ class NesRom(object):
             get the number of bytes you can multiply the prg count by
             16kb (the size of each page).
         '''
+
         return '{total}kb ({count} x 16kb pages)'.format(
             count=self.rom_data[4], total=self.rom_data[4] * 16
         )
@@ -160,6 +172,7 @@ class NesRom(object):
             get the number of bytes you can multiply the chr count by
             8kb (the size of each page).
         '''
+
         return '{total}kb ({count} x 8kb pages)'.format(
             count=self.rom_data[5], total=self.rom_data[5] * 8
         )
