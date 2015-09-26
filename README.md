@@ -3,6 +3,8 @@ nesi
 
 A rom hacking tool for the analysis of *.nes* rom images.
 
+![alt text](screenshots/nesi-screenshot.png "A screenshot of nesi's output")
+
 Requirements
 ------------
 
@@ -16,7 +18,15 @@ Work in progress...
 Usage
 -----
 
-Work in progress...
+Nesi is a command line application. The basic usage can be found below:
+
+    usage: nesi [-h] [-r ROM]
+
+    Specify a .nes rom image to be analyzed
+
+    optional arguments:
+      -h, --help         show this help message and exit
+      -r ROM, --rom ROM  path to a .nes rom image to be analyzed
 
 License
 -------
