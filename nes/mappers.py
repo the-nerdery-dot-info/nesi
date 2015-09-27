@@ -72,6 +72,42 @@ NES_MAPPERS = {
         'name': 'Unknown Name',
         'examples': '100-in-1 Contra Function 16 (Pirated)',
     },
+    16: {
+        'name': 'Bandai EPROM (24C02)',
+        'examples': 'Unknown',
+    },
+    18: {
+        'name': 'Jaleco SS8806',
+        'examples': 'Unknown',
+    },
+    19: {
+        'name': 'Namco 163',
+        'examples': 'Unknown',
+    },
+    21: {
+        'name': 'VRC4a, VRC4c',
+        'examples': 'Unknown',
+    },
+    22: {
+        'name': 'VRC2a',
+        'examples': 'Unknown',
+    },
+    23: {
+        'name': 'VRC2b, VRC4e',
+        'examples': 'Unknown',
+    },
+    24: {
+        'name': 'VRC6a',
+        'examples': 'Unknown',
+    },
+    25: {
+        'name': 'VRC4b, VRC4d',
+        'examples': 'Unknown',
+    },
+    26: {
+        'name': 'VRC6b',
+        'examples': 'Unknown',
+    },
 }
 
 
