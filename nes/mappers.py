@@ -8,10 +8,26 @@
 '''
 
 NES_MAPPERS = {
+    1: {
+        'name': 'MMC1',
+        'examples': 'Blaster Master, Bubble Bobble, Adventures of Bayou Billy',
+    },
     2: {
         'name': 'UxROM',
         'examples': 'Mega Man, Castlevania, Contra, Duck Tales, Metal Gear',
-    }
+    },
+    3: {
+        'name': 'CNROM',
+        'examples': 'Arkanoid, Bump \'n\' Jump, Cybernoid, Solomon\'s Key',
+    },
+    4: {
+        'name': 'MMC3 (TxROM)',
+        'examples': 'Fester\'s Quest, Final Fantasy 3, Mega Man 3',
+    },
+    5: {
+        'name': 'MMC5 (ExROM)',
+        'examples': 'Castlevania 3, Uncharted Waters, Laser Invasion',
+    },
 }
 
 
