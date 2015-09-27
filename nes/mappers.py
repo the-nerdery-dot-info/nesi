@@ -8,6 +8,10 @@
 '''
 
 NES_MAPPERS = {
+    0: {
+        'name': 'NROM',
+        'examples': 'Bomberman (J), Battle City, Duck Hunt, Dig Dug',
+    },
     1: {
         'name': 'MMC1',
         'examples': 'Blaster Master, Bubble Bobble, Adventures of Bayou Billy',
@@ -27,6 +31,26 @@ NES_MAPPERS = {
     5: {
         'name': 'MMC5 (ExROM)',
         'examples': 'Castlevania 3, Uncharted Waters, Laser Invasion',
+    },
+    6: {
+        'name': 'FFE (F4xxx)',
+        'examples': 'Saint Seiya (Hacked), Dragon Scroll (Hacked)',
+    },
+    7: {
+        'name': 'AxROM',
+        'examples': 'Battletoads, Jeopardy',
+    },
+    8: {
+        'name': 'FFE (F4xxx)',
+        'examples': 'Saint Seiya (Hacked), Dragon Scroll (Hacked)',
+    },
+    9: {
+        'name': 'MMC2 (PxROM)',
+        'examples': 'Punch Out!',
+    },
+    10: {
+        'name': 'MMC4 (FxROM)',
+        'examples': 'Famicom Wars',
     },
 }
 
