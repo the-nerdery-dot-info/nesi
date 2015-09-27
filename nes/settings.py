@@ -14,5 +14,5 @@ def build():
         'author': 'Corey Prophitt',
         'author_email': 'prophitt.corey@gmail.com',
         'major_version': 1,
-        'minor_version': 0,
+        'minor_version': 1,
     }
