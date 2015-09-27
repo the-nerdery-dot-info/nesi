@@ -52,6 +52,26 @@ NES_MAPPERS = {
         'name': 'MMC4 (FxROM)',
         'examples': 'Famicom Wars',
     },
+    11: {
+        'name': 'Color Dreams',
+        'examples': 'Bible Adventures, Chiller, Crystal Mines, Metal Fighter',
+    },
+    12: {
+        'name': 'MMC3 Variant',
+        'examples': 'Dragon Ball Z 5',
+    },
+    13: {
+        'name': 'NES-CPROM',
+        'examples': 'Videomation',
+    },
+    14: {
+        'name': 'MMC3 Variant',
+        'examples': 'Samurai Spirits (Pirated)',
+    },
+    15: {
+        'name': 'Unknown Name',
+        'examples': '100-in-1 Contra Function 16 (Pirated)',
+    },
 }
 
 
