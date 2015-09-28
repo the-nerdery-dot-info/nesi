@@ -94,27 +94,35 @@ NES_MAPPERS = {
     },
     21: {
         'name': 'VRC4a, VRC4c',
-        'examples': 'Unknown',
+        'examples': 'Gradius 2, Ganbare Goemon Gaiden 2',
     },
     22: {
         'name': 'VRC2a',
-        'examples': 'Unknown',
+        'examples': 'TwinBee 3, Ganbare Goemon Gaiden, Wai Wai World',
     },
     23: {
         'name': 'VRC2b, VRC4e',
-        'examples': 'Unknown',
+        'examples': 'Contra (J), Boku Dracula Kun',
     },
     24: {
         'name': 'VRC6a',
-        'examples': 'Unknown',
+        'examples': 'Akumajo Dracula 3',
     },
     25: {
         'name': 'VRC4b, VRC4d',
-        'examples': 'Unknown',
+        'examples': 'Ganbare Goemon Gaiden',
     },
     26: {
         'name': 'VRC6b',
+        'examples': 'Mouryou Senki Madara',
+    },
+    27: {
+        'name': 'Pirate Variant of VRC4',
         'examples': 'Unknown',
+    },
+    28: {
+        'name': 'Action 53 Extension Mod',
+        'examples': 'STREEMERZ: Action 53 Function 16 Volume One',
     },
     34: {
         'name': 'BNROM, NINA-001',
