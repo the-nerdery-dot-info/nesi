@@ -74,15 +74,23 @@ NES_MAPPERS = {
     },
     16: {
         'name': 'Bandai EPROM (24C02)',
-        'examples': 'Unknown',
+        'examples': 'SD Gundam Knight Story, Akuma Kun, Dragon Ball 2',
+    },
+    17: {
+        'name': 'FFE (similar to mapper 6)',
+        'examples': 'Dragon Ball Z 2 (Hacked), Parodius (Hacked)',
     },
     18: {
         'name': 'Jaleco SS8806',
-        'examples': 'Unknown',
+        'examples': 'Magic John, Plasma Ball, The Lord of King',
     },
     19: {
         'name': 'Namco 163',
-        'examples': 'Unknown',
+        'examples': 'Megami Tensei II, Rolling Thunder (J)',
+    },
+    20: {
+        'name': 'FDS',
+        'examples': 'None',
     },
     21: {
         'name': 'VRC4a, VRC4c',
