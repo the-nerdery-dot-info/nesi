@@ -126,75 +126,75 @@ NES_MAPPERS = {
     },
     34: {
         'name': 'BNROM, NINA-001',
-        'examples': 'Unknown',
+        'examples': 'Impossible Mission 2, Deadly Towers, 3D Worldrunner',
     },
     64: {
         'name': 'RAMBO-1',
-        'examples': 'Unknown',
+        'examples': 'Klax, Shinobi, Skull and Crossbones',
     },
     66: {
         'name': 'GxROM, MxROM',
-        'examples': 'Unknown',
+        'examples': 'Doraemon, Dragon Power, Super Mario Bros. + Duck Hunt ',
     },
     68: {
         'name': 'After Burner',
-        'examples': 'Unknown',
+        'examples': 'After Burner, Maharaja (J)',
     },
     69: {
         'name': 'FME-7, Sunsoft 5B',
-        'examples': 'Unknown',
+        'examples': 'Batman (J), Batman - Return of the Joker',
     },
     71: {
         'name': 'Camerica/Codemasters',
-        'examples': 'Unknown',
+        'examples': 'Bee 52, MiG 29 - Soviet Fighter, Fire Hawk',
     },
     73: {
         'name': 'VRC3',
-        'examples': 'Unknown',
+        'examples': 'Salamander',
     },
     74: {
         'name': 'Pirate MMC3 derivative',
-        'examples': 'Unknown',
+        'examples': 'Unknown, Eastern Games?',
     },
     75: {
         'name': 'VRC1',
-        'examples': 'Unknown',
+        'examples': 'Exciting Boxing, King Kong 2: Ikari no Megaton Punch',
     },
     76: {
         'name': 'Namco 109 variant',
-        'examples': 'Unknown',
+        'examples': 'Digital Devil Story - Megami Tensei',
     },
     79: {
         'name': 'NINA-03/NINA-06',
-        'examples': 'Unknown',
+        'examples': 'Double Strike, Dudes with Attitudes',
     },
     85: {
         'name': 'VRC7',
-        'examples': 'Unknown',
+        'examples': 'Lagrange Point, Tiny Toon Adventures',
     },
     86: {
         'name': 'JALECO-JF-13',
-        'examples': 'Unknown',
+        'examples': 'Moero!! Pro Yakyuu',
     },
     94: {
-        'name': 'Senjou no Ookami',
-        'examples': 'Unknown',
+        'name': 'HVC-UN1ROM, similar to the UxROM',
+        'examples': 'Senjou no Ookami',
     },
     105: {
         'name': 'NES-EVENT',
-        'examples': 'Unknown',
+        'examples': 'Nintendo World Championships 1990',
     },
     113: {
         'name': 'NINA-03/NINA-06??',
-        'examples': 'Unknown',
+        'examples': 'Mind Blower Pak, HES 6-in-1, Total Funpak',
     },
     118: {
         'name': 'TxSROM, MMC3 Variant',
-        'examples': 'Unknown',
+        'examples': 'Armadillo, Pro Sport Hockey',
     },
     119: {
         'name': 'TQROM, MMC3 Variant',
-        'examples': 'Unknown',
+        'examples': 'High Speed, Pinbot',
     },
     159: {
         'name': 'Bandai EPROM (24C01)',
@@ -209,32 +209,32 @@ NES_MAPPERS = {
         'examples': 'Unknown',
     },
     180: {
-        'name': 'Crazy Climber',
-        'examples': 'Unknown',
+        'name': 'UNROM Variant',
+        'examples': 'Crazy Climber',
     },
     185: {
         'name': 'CNROM with protection diodes',
-        'examples': 'Unknown',
+        'examples': 'Mighty Bomb Jack (J), Spy Vs. Spy (J)',
     },
     192: {
         'name': 'Pirate MMC3 derivative',
-        'examples': 'Unknown',
+        'examples': 'Ying Lie Qun Xia Zhuan',
     },
     206: {
         'name': 'DxROM, Namco 118 / MIMIC-1',
-        'examples': 'Unknown',
+        'examples': 'Babel no Tou',
     },
     210: {
         'name': 'Namco 175 and 340',
-        'examples': 'Unknown',
+        'examples': 'Famista \'92, Wagyan Land 3',
     },
     228: {
         'name': 'Action 52',
-        'examples': 'Unknown',
+        'examples': 'Action 52, Cheetah Men II',
     },
     232: {
         'name': 'Camerica/Codemasters Quattro',
-        'examples': 'Unknown',
+        'examples': 'Quattro Adventure, Quattro Sports, Quattro Arcade',
     },
 }
 
