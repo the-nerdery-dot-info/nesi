@@ -6,7 +6,7 @@ nesi
 
 A rom hacking tool for the analysis of *.nes* rom images.
 
-Nesi may be useful for rom hackers or emulator developers. The `find` utility
+Nesi may be useful for rom hackers or emulator developers. The `file` utility
 on Linux provides *some* information on `.nes` rom files, but not enough. Nesi
 was created to provide additional information.
 
